@@ -1,0 +1,8 @@
+.cardImg{
+    max-height: 500px;
+    object-fit: cover; 
+}
+
+h5, p{
+    color: rgb(68, 67, 67);
+}
