@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getProduct } from "../../productMock";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import styles from './ItemDetailContainer.module.css';  
 
 export const ItemDetailContainer = () => {
 
@@ -26,7 +27,6 @@ export const ItemDetailContainer = () => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }

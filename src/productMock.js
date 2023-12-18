@@ -4,9 +4,8 @@ const products = [
     { id: "3", name: "Carre", description: "Carre de cerdo", category: "cerdo", img: "../../../images/Carre.JPG", stock: 10 },
     { id: "4", name: "Matambrito", description: "Matambrito de cerdo", category: "cerdo", img: "../../../images/Matambrito.JPG", stock: 10 }
   ];
-
-
-  export const getProducts = () => {
+  
+    export const getProducts = () => {
     return new Promise((resolve, reject) => {
       
       if (products.length > 0) {

@@ -41,7 +41,6 @@ export const ItemListContainer = () => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }

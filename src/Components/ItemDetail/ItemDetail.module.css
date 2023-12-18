@@ -3,6 +3,16 @@
     object-fit: cover; 
 }
 
-h5, p{
-    color: rgb(68, 67, 67);
+h2, p{
+    color: rgb(255, 255, 255);
 }
+.btnCount{
+    height: 20px;
+    width: 40px;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    border-radius: 5px;
+}
+
