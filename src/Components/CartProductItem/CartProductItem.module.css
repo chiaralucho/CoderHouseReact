@@ -7,6 +7,8 @@
 img{
     width: 100px;
     border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
 }
 h5, p{
     color: white;

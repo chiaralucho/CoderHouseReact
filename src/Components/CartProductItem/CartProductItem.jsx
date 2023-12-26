@@ -14,7 +14,7 @@ export const CartProductItem = ({id, name, img, count, price}) => {
   return (
     <div className="container-fluid">
       <div className={`row ${styles.cardProduct}`}>
-        <div className="col-12 d-flex flex-row align-items-center justify-items-around">
+        <div className="col-12 d-flex flex-row align-items-center justify-content-around">
             <img className="mx-1" src={img} alt="" />
             <h5 className='m-0 p-0'>{name}</h5>
             <p className='m-0 p-0'>${price} - {count}kg</p>
