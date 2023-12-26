@@ -1,29 +1,40 @@
 import { useEffect, useState } from "react";
-import { getProduct } from "../../productMock";
+import { collection, doc, getDocs, query } from 'firebase/firestore'
+import { db } from '../../Config/firebaseConfig'
 import { ItemDetail } from "../ItemDetail/ItemDetail";
-import { useParams } from "react-router-dom";
 import styles from './ItemDetailContainer.module.css';  
+import { useParams } from "react-router-dom";
 
 export const ItemDetailContainer = () => {
 
- const [product, setProduct] = useState(null);
+  const { id } = useParams()
+ 
+  const[product, setProduct] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
-    const { id } = useParams();
 
-  useEffect(() => {
-    getProduct(id)
-      .then(resp => {
-        setProduct(resp);
-      })
-      .catch(error => console.log(error))
-  }, [product])
+
+  useEffect(()=> {
+
+    const myProducts = query(collection(  db, "products"));
+    getDocs(myProducts)
+        .then( resp => {
+          const productFiltered = resp.docs.find(doc => doc.id === id)
+          const productData = {id: productFiltered.id, ...productFiltered.data()}
+                                      
+          setProduct(productData)
+          setIsLoading(false)
+        })
+        .catch(error => console.log(error))
+}, [])
+
 
   return (
     <div>
       <div className="container-fluid">
         <div className="row">
           <div className="d-flex col-12 flex-row flex-wrap p-0">
-          { product && <ItemDetail {...product} /> }
+          { isLoading ? <h3 className="col-12 text-align-center">Cargando producto... </h3> : <ItemDetail {...product} /> }
           </div>
         </div>
       </div>

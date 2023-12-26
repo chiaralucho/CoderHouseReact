@@ -4,13 +4,15 @@
     border-radius: 10px;
 }
 
-.cardImg{
-    width: 100%;
-    height: 200px;
-    object-fit: cover; 
-    border-radius: 10px 10px 0px 0px;
+img{
+    width: 100px;
+    border-radius: 10px;
 }
-
 h5, p{
     color: white;
+}
+
+.line{
+    border-top: 1px solid white;
+    width: 40%;
 }

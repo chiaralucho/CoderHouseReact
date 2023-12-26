@@ -1,12 +1,8 @@
 
-nav img{
-    width: 10%;
-}
 
 nav{
     background-color: #1a1a1a;
 }
-
-nav button{
-    background-color: brown;
+button{
+    width: 9rem;
 }

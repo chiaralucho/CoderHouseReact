@@ -6,20 +6,23 @@ export const GlobalContextProvider = ( { children } ) =>{
 
 const [cart, setCart] = useState([]);
 
-const addProductToCart = (product) => {
+const addProductToCart = (product, newCount) => {
 
   const currentProduct = cart.find(productCart => productCart.id === product.id);
 
-  if(currentProduct){
-  
-    currentProduct.count = product.count;
-
-  }else{
-    setCart([...cart, product]);
-
-  }
+    currentProduct ? currentProduct.count = newCount : setCart([...cart, product])
 }
 
-    return <GlobalContext.Provider value={{cart, addProductToCart}}> {children} </GlobalContext.Provider>
+
+const removeProduct = (productId ) => {
+
+  setCart(
+    cart.filter(product => product.id != productId)
+  )
+
+}
+
+
+    return <GlobalContext.Provider value={{cart, addProductToCart, removeProduct}}> {children} </GlobalContext.Provider>
 }
  

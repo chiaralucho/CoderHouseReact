@@ -1,4 +1,4 @@
-import { NavBar, ItemListContainer, ItemDetailContainer, Cart } from "./Components/index.js"
+import { NavBar, ItemDetailContainer, Cart, ItemListContainer } from "./Components/index.js"
 import Styles from './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { GlobalContext, GlobalContextProvider } from "./Context/GlobalContext.jsx"
